@@ -1,0 +1,30 @@
+#{extends 'main.html' /}
+#{set title:'Admin' /}
+
+#{menu id:"admin"/}
+
+<section class="ui raised segment">
+    <header class="ui header">
+        Assessments
+    </header>
+    <table class="ui fixed table">
+        <thead>
+            <tr>
+                <th>ID</th>
+                <th>Assessment</th>
+            </tr>
+        </thead>
+        <tbody>
+        #{list items:assessments, as:'assessment'}
+        <tr>
+            <td>
+                ${assessment.id}
+            </td>
+            <td>
+                ${assessment.weight}
+            </td>
+        </tr>
+        #{/list}
+        </tbody>
+    </table>
+</section>

@@ -1,0 +1,39 @@
+Assessment(a1):
+  weight: 150.0
+  chest: 100
+  thigh: 80
+  upperArm: 65
+  waist: 125.0
+  hips: 110
+
+Assessment(a2):
+  weight: 123.3
+  chest: 45.0
+  thigh: 12.0
+  upperArm: 23.3
+  waist: 31.0
+  hips: 36.0
+
+Member(m1):
+  firstname: Homer
+  lastname: Simpson
+  gender: male
+  email: homer@simpson.com
+  password: stupidsexyflanders
+  address: 742 Evergreen Terrace, Springfield USA
+  height: 1.8
+  startingWeight: 120
+  assessments:
+  - a1
+
+Member(m2):
+  firstname: Marge
+  lastname: Simpson
+  gender: female
+  email: marge@simpson.com
+  password: homie
+  address: 742 Evergreen Terrace, Springfield USA
+  height: 60
+  startingWeight: 60
+  assessments:
+  - a2

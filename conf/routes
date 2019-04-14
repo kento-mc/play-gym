@@ -4,8 +4,16 @@
 
 # Home page
 GET     /                                       Start.index
+GET     /signup                                 Accounts.signup
+GET     /login                                  Accounts.login
+POST    /register                               Accounts.register
+POST    /authenticate                           Accounts.authenticate
+GET     /logout                                 Accounts.logout
 GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index
+GET     /admin                                  Admin.index
+POST    /dashboard                              Dashboard.addAssessment
+GET     /dashboard/{id}/deleteassessment/{assessmentid}  Dashboard.deleteAssessment
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
