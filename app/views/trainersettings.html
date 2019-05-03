@@ -1,0 +1,100 @@
+#{extends 'main.html' /}
+#{set title:'Member Settings' /}
+
+#{trainermenu id:"member"/}
+
+<section class="ui segment">
+    <div class="ui two column grid basic middle aligned segment">
+        <div class="column">
+            <table class="ui fixed table">
+                <thead>
+                    <tr>
+                        <th colspan="2">Trainer Info</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>
+                            First Name:
+                        </td>
+                        <td>
+                            ${trainer.firstName}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Last Name:
+                        </td>
+                        <td>
+                            ${trainer.lastName}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Gender:
+                        </td>
+                        <td>
+                            ${trainer.gender}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Email:
+                        </td>
+                        <td>
+                            ${trainer.email}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Password:
+                        </td>
+                        <td>
+                            ${trainer.password}
+                        </td>
+                    </tr>
+                    <tr>
+                        <td>
+                            Address:
+                        </td>
+                        <td>
+                            ${trainer.address}
+                        </td>
+                    </tr>
+                </tbody>
+            </table>
+        </div>
+        <div class="column">
+            <form class="ui stacked segment form" action="/trainer/update" method="POST">
+                <h3 class="ui header">Update Personal Info</h3>
+                <div class="two fields">
+                    <div class="field">
+                        <label>First Name</label>
+                        <input placeholder="First Name" type="text" name="firstname">
+                    </div>
+                    <div class="field">
+                        <label>Last Name</label>
+                        <input placeholder="Last Name" type="text" name="lastname">
+                    </div>
+                </div>
+                <div class="field">
+                    <label>Gender</label>
+                    <input placeholder="Gender" type="text" name="gender">
+                </div>
+                <div class="field">
+                    <label>Email</label>
+                    <input placeholder="Email" type="text" name="email">
+                </div>
+                <div class="field">
+                    <label>Password</label>
+                    <input type="password" name="password">
+                </div>
+                <div class="field">
+                    <label>Address</label>
+                    <input type="text" name="address">
+                </div>
+                <button class="ui blue submit button">Submit</button>
+            </form>
+        </div>
+    </div>
+</section>

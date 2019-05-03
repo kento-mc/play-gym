@@ -8,7 +8,7 @@ public class GymUtility {
     public static double calculateBMI(Member member, Assessment assessment)
     {
         double bmiValue = assessment.weight / Math.pow(member.height, 2);
-        return bmiValue;
+        return (int) (bmiValue *100) / 100.0;   // convert to two decimal places
     }
 
     public static String determineBMICategory(double bmiValue)
@@ -32,17 +32,17 @@ public class GymUtility {
 
     public static boolean isIdealBodyWeight(Member member, Assessment assessment)
     {
-        double maleIdealMemberWeight = ((Math.round((member.height - 152.4) / 2.54)) * 2.3) + 50;
-        double femaleIdealMemberWeight = ((Math.round((member.height - 152.4) / 2.54)) * 2.3) + 45.5;
+        double maleIdealMemberWeight = ((Math.round((member.height - 1.524) / .0254)) * 2.3) + 50;
+        double femaleIdealMemberWeight = ((Math.round((member.height - 1.524) / .0254)) * 2.3) + 45.5;
 
-        if (member.gender == "male") {
-            if (assessment.weight <= maleIdealMemberWeight + 0.2 && assessment.weight >= maleIdealMemberWeight - 0.2) {
+        if (member.gender == "M") {
+            if (assessment.weight <= maleIdealMemberWeight + 2 && assessment.weight >= maleIdealMemberWeight - 2) {
                 return true;
             } else {
                 return false;
             }
         } else {
-            if (assessment.weight <= femaleIdealMemberWeight + 0.2 && assessment.weight >= femaleIdealMemberWeight - 0.2) {
+            if (assessment.weight <= femaleIdealMemberWeight + 2 && assessment.weight >= femaleIdealMemberWeight - 2) {
                 return true;
             } else {
                 return false;

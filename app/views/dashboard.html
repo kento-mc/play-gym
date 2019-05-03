@@ -4,59 +4,24 @@
 #{menu id:"dashboard"/}
 
 <section class="ui segment">
-  <section class="ui segment">
-    <div class="ui grid">
-      <div class="four wide column">
-        <header class="ui header">
-          ${member.firstname} ${member.lastname}
-        </header>
-      </div>
-      <div class="four wide column">
-        ${member.isIdealWeight()}
-      </div>
-      <div class="four wide column">
-        ${member.calculateBMI()}
-      </div>
-      <div class="four wide column">
-        ${member.bmiCategory()}
-      </div>
-    </div>
-  </section>
+  #{memberstatbar member:member/}
   <table class="ui fixed table">
     <thead>
       <tr>
-        <th>Weight</th>
-        <th>Chest</th>
-        <th>Thigh</th>
-        <th>Upper Arm</th>
-        <th>Waist</th>
-        <th>Hips</th>
+        #{assessmentheader /}
         <th></th>
       </tr>
     </thead>
     <tbody>
       #{list items:assessments, as:'assessment'}
         <tr>
-          <td>
-            ${assessment.weight}
-          </td>
-          <td>
-            ${assessment.chest}
-          </td>
-          <td>
-           ${assessment.thigh}
-          </td>
-          <td>
-           ${assessment.upperArm}
-          </td>
-          <td>
-           ${assessment.waist}
-          </td>
-          <td>
-           ${assessment.hips}
-          </td>
-          <td>
-            <a href="/dashboard/${member.id}/deleteassessment/${assessment.id} " class="ui tiny red button"> Delete </a>
+          #{assessmentdata assessment:assessment /}
+          <td class="center aligned">
+            <a href="/dashboard/${member.id}/deleteassessment/${assessment.id}">
+              <h1>
+                <i class="trash alternate icon"></i>
+              </h1>
+            </a>
           </td>
         </tr>
       #{/list}

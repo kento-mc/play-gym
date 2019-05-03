@@ -2,7 +2,6 @@ package models;
 
 import controllers.Accounts;
 import controllers.GymUtility;
-import play.db.jpa.Model;
 
 import javax.persistence.CascadeType;
 import javax.persistence.Entity;
@@ -11,28 +10,23 @@ import java.util.ArrayList;
 import java.util.List;
 
 @Entity
-public class Member extends Model
+public class Member extends Person
 {
-    public String firstname;
-    public String lastname;
-    public String gender;
+    public String firstName;
+    public String lastName;
     public String email;
-    public String password;
     public String address;
+    public String gender;
+    public String password;
     public double height;
     public double startingWeight;
 
     @OneToMany(cascade = CascadeType.ALL)
     public List<Assessment> assessments = new ArrayList<Assessment>();
 
-    public Member(String firstname, String lastname, String gender, String email, String password, String address, double height, double startingWeight)
+    public Member(String firstName, String lastName, String gender, String email, String password, String address, double height, double startingWeight)
     {
-        this.firstname = firstname;
-        this.lastname = lastname;
-        this.gender = gender;
-        this.email = email;
-        this.password = password;
-        this.address = address;
+        super(email, firstName, lastName, address, gender, password);
         this.height = height;
         this.startingWeight = startingWeight;
     }
@@ -42,16 +36,18 @@ public class Member extends Model
         return find("email", email).first();
     }
 
+    /*
     public boolean checkPassword(String password)
     {
         return this.password.equals(password);
     }
+    */
 
-    public double calculateBMI()
+    public double calculateBMI(Long id)
     {
         if (!assessments.isEmpty()) {
-            Member member = Accounts.getLoggedInMember();
-            Assessment currentAssessment = assessments.get(assessments.size() - 1);
+            Member member = Member.findById(id);
+            Assessment currentAssessment = assessments.get(0);
             double bmi = GymUtility.calculateBMI(member, currentAssessment);
             return bmi;
         } else {
@@ -59,17 +55,17 @@ public class Member extends Model
         }
     }
 
-    public String bmiCategory()
+    public String bmiCategory(Long id)
     {
-        String str = GymUtility.determineBMICategory(calculateBMI());
+        String str = GymUtility.determineBMICategory(calculateBMI(id));
         return str;
     }
 
-    public boolean isIdealWeight()
+    public boolean isIdealWeight(Long id)
     {
         if (!assessments.isEmpty()) {
-            Member member = Accounts.getLoggedInMember();
-            Assessment currentAssessment = assessments.get(assessments.size() - 1);
+            Member member = Member.findById(id);
+            Assessment currentAssessment = assessments.get(0);
             boolean ideal = GymUtility.isIdealBodyWeight(member, currentAssessment);
             return ideal;
         } else {
@@ -77,5 +73,69 @@ public class Member extends Model
         }
     }
 
+    public String numAssessments() {
+        if (assessments.size() == 1) {
+            return assessments.size() + " assessment";
+        } else {
+            return assessments.size() + " assessments";
+        }
+    }
+
+    public static void updateTrend(Long id) {
+        Member member = Member.findById(id);
+        if (member.assessments.size() >= 2)
+        {
+            for (int i = 0; i < member.assessments.size() - 1; i++)
+            {
+                if (member.assessments.get(i).weight < member.assessments.get(i+1).weight) {
+                    member.assessments.get(i).setTrendIsPositive(true);
+                } else {
+                    member.assessments.get(i).setTrendIsPositive(false);
+
+                }
+            }
+        }
+    }
+
+    @Override
+    public void setFirstName(String firstName) {
+        this.firstName = firstName;
+    }
+
+    @Override
+    public void setLastName(String lastName) {
+        this.lastName = lastName;
+    }
+
+    public void setEmail(String email) {
+        this.email = email;
+    }
+
+    @Override
+    public void setAddress(String address) {
+        this.address = address;
+    }
+
+    public void setGender(String gender) {
+        if (gender.charAt(0) == 'M' || gender.charAt(0) == 'm') {
+            this.gender = "M";
+        } else if (gender.charAt(0) == 'M' || gender.charAt(0) == 'f') {
+            this.gender = "F";
+        } else {
+            this.gender = "Unspecified";
+        }
+    }
+
+    public void setHeight(double height) {
+        this.height = height;
+    }
+
+    public void setStartingWeight(double startingWeight) {
+        this.startingWeight = startingWeight;
+    }
+
+    public void setPassword(String password) {
+        this.password = password;
+    }
 }
 

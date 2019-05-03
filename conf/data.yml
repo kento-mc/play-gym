@@ -1,23 +1,37 @@
 Assessment(a1):
+  dateTime: 2019-05-01 09:00:00
   weight: 150.0
   chest: 100
   thigh: 80
   upperArm: 65
   waist: 125.0
   hips: 110
+  trendIsPositive: true
 
 Assessment(a2):
+  dateTime: 2019-05-01 10:00:00
+  weight: 151.0
+  chest: 100
+  thigh: 80
+  upperArm: 65
+  waist: 125.5
+  hips: 110
+  trendIsPositive: false
+
+Assessment(a3):
+  dateTime: 2019-05-01 09:00:00
   weight: 123.3
   chest: 45.0
   thigh: 12.0
   upperArm: 23.3
   waist: 31.0
   hips: 36.0
+  trendIsPositive: true
 
 Member(m1):
-  firstname: Homer
-  lastname: Simpson
-  gender: male
+  firstName: Homer
+  lastName: Simpson
+  gender: M
   email: homer@simpson.com
   password: stupidsexyflanders
   address: 742 Evergreen Terrace, Springfield USA
@@ -25,15 +39,24 @@ Member(m1):
   startingWeight: 120
   assessments:
   - a1
+  - a2
 
 Member(m2):
-  firstname: Marge
-  lastname: Simpson
-  gender: female
+  firstName: Marge
+  lastName: Simpson
+  gender: F
   email: marge@simpson.com
   password: homie
   address: 742 Evergreen Terrace, Springfield USA
-  height: 60
+  height: 1.5
   startingWeight: 60
   assessments:
-  - a2
+  - a3
+
+Trainer(t1):
+  firstName: Rainier
+  lastName: Wolfcastle
+  gender: M
+  email: rainier@simpson.com
+  password: mendoza
+  address: Austria

@@ -12,8 +12,16 @@ GET     /logout                                 Accounts.logout
 GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index
 GET     /admin                                  Admin.index
-POST    /dashboard                              Dashboard.addAssessment
+POST    /dashboard/addassessment                Dashboard.addAssessment
 GET     /dashboard/{id}/deleteassessment/{assessmentid}  Dashboard.deleteAssessment
+GET     /member                                 UserSettings.memberIndex
+POST    /member/update                          Accounts.memberUpdate
+GET     /trainer                                UserSettings.trainerIndex
+POST    /trainer/update                         Accounts.trainerUpdate
+GET     /trainerdashboard                       TrainerDashboard.index
+GET     /trainerdashboard/{id}/deletemember     TrainerDashboard.deleteMember
+GET     /members/{id}                           TrainerMemDetail.index
+POST    /members/{id}/assessment/{assessmentid}/addcomment   TrainerMemDetail.addComment
 
 # Ignore favicon requests
 GET     /favicon.ico                            404
