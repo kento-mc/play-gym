@@ -20,12 +20,12 @@ Assessment(a2):
 
 Assessment(a3):
   dateTime: 2019-05-01 09:00:00
-  weight: 123.3
-  chest: 45.0
-  thigh: 12.0
+  weight: 65
+  chest: 80
+  thigh: 40
   upperArm: 23.3
-  waist: 31.0
-  hips: 36.0
+  waist: 65
+  hips: 80
   trendIsPositive: true
 
 Member(m1):
