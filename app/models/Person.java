@@ -50,7 +50,7 @@ public class Person extends Model {
     public void setGender(String gender) {
         if (gender.charAt(0) == 'M' || gender.charAt(0) == 'm') {
             this.gender = "M";
-        } else if (gender.charAt(0) == 'M' || gender.charAt(0) == 'f') {
+        } else if (gender.charAt(0) == 'F' || gender.charAt(0) == 'f') {
             this.gender = "F";
         } else {
             this.gender = "Unspecified";
