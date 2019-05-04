@@ -8,6 +8,7 @@ GET     /signup                                 Accounts.signup
 GET     /login                                  Accounts.login
 POST    /register                               Accounts.register
 POST    /authenticate                           Accounts.authenticate
+GET     /authenticate                           Accounts.authenticate
 GET     /logout                                 Accounts.logout
 GET     /dashboard                              Dashboard.index
 GET     /about                                  About.index

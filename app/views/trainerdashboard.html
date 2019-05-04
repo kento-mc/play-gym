@@ -9,13 +9,26 @@
     </header>
         #{list items:members, as:'member'}
             <section class="ui segment">
-                <a href ="/members/${member.id}">
-                    <h3>${member.firstName} ${member.lastName}</h3>
-                    <a href="/trainerdashboard/${member.id}/deletemember">
-                        <i class="red trash alternate icon"></i>
-                    </a>
-                </a>
-                ${member.numAssessments()}
+                <section class="ui grid">
+                    <div class="one wide center aligned column">
+                        <h1>
+                            <i class="user icon"></i>
+                        </h1>
+                    </div>
+                    <div class="three wide column">
+                        <a href ="/members/${member.id}">
+                            <h3>${member.firstName} ${member.lastName}</h3>
+                        </a>
+                        ${member.numAssessments()}
+                    </div>
+                    <div class="twelve wide right aligned column">
+                        <h1>
+                            <a href="/trainerdashboard/${member.id}/deletemember">
+                                <i class="red trash alternate icon"></i>
+                            </a>
+                        </h1>
+                    </div>
+                </section>
             </section>
         #{/list}
 </section>

@@ -15,16 +15,16 @@
             </tr>
         </thead>
         <tbody>
-        #{list items:assessments, as:'assessment'}
-        <tr>
-            <td>
-                ${assessment.id}
-            </td>
-            <td>
-                ${assessment.weight}
-            </td>
-        </tr>
-        #{/list}
+            #{list items:assessments, as:'assessment'}
+                <tr>
+                    <td>
+                        ${assessment.id}
+                    </td>
+                    <td>
+                        ${assessment.weight}
+                    </td>
+                </tr>
+            #{/list}
         </tbody>
     </table>
 </section>

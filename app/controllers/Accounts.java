@@ -22,7 +22,8 @@ public class Accounts extends Controller
         Logger.info("Registering new user: " + email);
         Member member = new Member(firstname, lastname, gender, email, password, address, height, startingWeight);
         member.save();
-        redirect("/");
+        authenticate(email, password);
+        //redirect("/");
     }
 
     public static void memberUpdate(String firstname, String lastname, String gender, String email, String password, String address, double height, double startingWeight) {
@@ -85,7 +86,7 @@ public class Accounts extends Controller
         }
     }
 
-        public static void authenticate(String email, String password)
+    public static void authenticate(String email, String password)
     {
         Logger.info("Attempting to authenticate with " + email + ": " + password);
 
