@@ -1,9 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="09a11659-cabf-4761-a1fa-64c8d73d8b54" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/app/views/trainersettings.html" beforeDir="false" afterPath="$PROJECT_DIR$/app/views/trainersettings.html" afterDir="false" />
-    </list>
+    <list default="true" id="09a11659-cabf-4761-a1fa-64c8d73d8b54" name="Default Changelist" comment="" />
     <ignored path="$PROJECT_DIR$/tmp/classes/" />
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -345,18 +343,17 @@
       <workItem from="1555185643306" duration="28995000" />
       <workItem from="1556527870604" duration="31133000" />
       <workItem from="1556671811919" duration="50384000" />
-      <workItem from="1556922423753" duration="10772000" />
+      <workItem from="1556922423753" duration="11032000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="121284000" />
+    <option name="totallyTimeSpent" value="121544000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="396" y="23" width="1250" height="987" extended-state="0" />
-    <editor active="true" />
     <layout>
-      <window_info active="true" content_ui="combo" id="Project" order="0" visible="true" weight="0.227649" />
+      <window_info content_ui="combo" id="Project" order="0" visible="true" weight="0.227649" />
       <window_info id="Structure" order="1" side_tool="true" weight="0.25" />
       <window_info id="Image Layers" order="2" />
       <window_info id="Designer" order="3" />
@@ -373,7 +370,7 @@
       <window_info anchor="bottom" id="Docker" order="7" show_stripe_button="false" />
       <window_info anchor="bottom" id="Version Control" order="8" />
       <window_info anchor="bottom" id="Database Changes" order="9" />
-      <window_info anchor="bottom" id="Terminal" order="10" sideWeight="0.4989796" visible="true" weight="0.32960895" />
+      <window_info active="true" anchor="bottom" id="Terminal" order="10" sideWeight="0.4989796" visible="true" weight="0.32960895" />
       <window_info anchor="bottom" id="Event Log" order="11" sideWeight="0.50102043" side_tool="true" weight="0.32960895" />
       <window_info anchor="right" id="Commander" internal_type="SLIDING" order="0" type="SLIDING" weight="0.4" />
       <window_info anchor="right" id="Ant Build" order="1" weight="0.25" />
